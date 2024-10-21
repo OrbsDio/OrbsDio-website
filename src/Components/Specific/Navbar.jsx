@@ -7,9 +7,7 @@ import { useGSAP } from "@gsap/react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const fullRef = useRef(null);
-  const navRef = useRef(null); // Create a ref for the navbar
   const tl = useRef(null); // Create a ref for the timeline
-  const [scrollDirection, setScrollDirection] = useState("up"); // Track scroll direction
 
   // Set up GSAP timeline
   useGSAP(() => {
@@ -51,34 +49,8 @@ const Navbar = () => {
     setIsOpen((prev) => !prev); // Toggle the state
   };
 
-  // Scroll detection
-  useEffect(() => {
-    let lastScrollTop = 0;
-
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-
-      // Determine scroll direction
-      if (scrollTop > lastScrollTop) {
-        setScrollDirection("down"); // Scrolling down
-        gsap.to(navRef.current, { y: "-100%", duration: 0.3 }); // Move navbar up
-      } else {
-        setScrollDirection("up"); // Scrolling up
-        gsap.to(navRef.current, { y: "0%", duration: 0.3 }); // Move navbar down
-      }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup on unmount
-  }, []);
-
   return (
-    <nav
-      ref={navRef}
-      className="nav w-screen fixed flex items-center justify-between top-0  px-[4rem] py-[2rem] z-[9999] transition-transform duration-300"
-    >
+    <nav className="nav w-screen fixed flex items-center justify-between top-0  px-[4rem] py-[2rem] z-[9999]">
       <h1>LOGO</h1>
 
       <div className="w-[80%] flex gap-[4.5rem] items-center justify-end text-2xl relative">
@@ -104,7 +76,7 @@ const Navbar = () => {
       <div
         id="full"
         ref={fullRef}
-        style={{ position: "absolute" }} // Corrected position property
+        style={{ position: "absol" }} // Set absolute positioning for the menu
       >
         <NavLink to="/">
           <h4>Home</h4>

@@ -51,7 +51,7 @@ const About = () => {
           </h3>
         </div>
         {/* Image Section */}
-        <div className=" imagee w-[40%] h-full bg-red-500  overflow-hidden ">
+        <div className="imagee w-[40%] h-full bg-red-500  overflow-hidden ">
           <img
             className=" w-full object-cover h-[60vh]"
             src="https://imgs.search.brave.com/osJGMcr4DTDx8ZbQ0uaDyfXmqyjQOTjbuEepAbtgsuQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvODE3/MTE0MDcvcGhvdG8v/ZG9jdG9yLWluLWhv/c3BpdGFsLWNvcnJp/ZG9yLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1tNWRNb2Fw/NUJfTlNjN2QxRjky/SFgxckFYck80VzJB/NnN5M2I0aWNURENz/PQ"
